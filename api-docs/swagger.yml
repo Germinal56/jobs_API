@@ -10,7 +10,7 @@ components:
       type: http
       scheme: bearer
 paths:
-  /auth/register:
+  /api/v1/auth/register:
     post:
       tags:
         - General
@@ -29,7 +29,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /auth/login:
+  /api/v1/auth/login:
     post:
       tags:
         - General
@@ -47,7 +47,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /jobs:
+  /api/v1/jobs:
     post:
       tags:
         - General
@@ -78,7 +78,8 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /jobs/{id}:
+            
+  /api/v1/jobs/{id}:
     parameters:
       - in: path
         name: id
