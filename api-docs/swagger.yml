@@ -78,7 +78,14 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /jobs/6687deebc548e364d79439d8:
+  /jobs/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The job ID
     get:
       tags:
         - General
@@ -90,7 +97,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /jobs/6687f5c516ebce69a7341f1c:
+            
     patch:
       tags:
         - General
