@@ -3,7 +3,7 @@ info:
   title: 06-Jobs-API
   version: 1.0.0
 servers:
-  - url: http://{{url}}
+  - url: https://jobs-api-qsdx.onrender.com
 components:
   securitySchemes:
     bearerAuth:
@@ -97,7 +97,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-            
+
     patch:
       tags:
         - General
