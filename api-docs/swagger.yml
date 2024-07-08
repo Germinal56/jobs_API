@@ -1,0 +1,123 @@
+openapi: 3.0.0
+info:
+  title: 06-Jobs-API
+  version: 1.0.0
+servers:
+  - url: http://{{url}}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /auth/register:
+    post:
+      tags:
+        - General
+      summary: Register user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: johnatan_pinusss
+                email: pinus_jVerde10s1@gmail.com
+                password: carotoneRosso55
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/login:
+    post:
+      tags:
+        - General
+      summary: Login user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: pinus_jVerde101@gmail.com
+                password: carotoneRosso55
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs:
+    post:
+      tags:
+        - General
+      summary: Create Job
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                company: space Mario
+                position: great lovable fuck
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - General
+      summary: Get all jobs (related to user)
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs/6687deebc548e364d79439d8:
+    get:
+      tags:
+        - General
+      summary: Get single Job
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs/6687f5c516ebce69a7341f1c:
+    patch:
+      tags:
+        - General
+      summary: Update Job
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                company: MC Fierli
+                position: simple man
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - General
+      summary: Delete Job
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
